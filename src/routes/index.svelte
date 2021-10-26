@@ -3,57 +3,154 @@
 </script>
 
 <script>
-	import Counter from '$lib/Counter.svelte';
+
+
+	let a=[
+		{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},{
+			type:"KH 72",
+			model:"86274vc010",
+			rev:12,
+			oldrev:11,
+			drawAt:1633870927800,
+			doneAt:1633870927800,
+		},
+	]
+
+function dateString(timeNum){
+	let time=new Date(timeNum)
+	console.log(time.getDate())
+	return `${time.getDate()}/${time.getMonth()+1}`
+}
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
-
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
+<div class="input-group mb-3" style="max-width:500px;position:sticky " >
+		<input type="text" class="form-control" placeholder="Search">
+		<div class="input-group-append">
+		  <span class="input-group-text">12</span>
+		  
 		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+	  </div>
+<section>
+	<table class="table">
+		<thead>
+		  <tr class="table-success">
+			<th scope="col">#</th>
+			<th scope="col">Model</th>
+			<th scope="col">Rev</th>
+			<th scope="col">Drawing</th>
+			<th scope="col">Done</th>
+		  </tr>
+		</thead>
+		<tbody>
+			{#each a as todo, i}
+			<tr>
+				<td scope="row" class="text-secondary">{i}</td>
+				<th>{todo.model}</th>
+				<td>{todo.rev}_{todo.oldrev}</td>
+				<td><small>{dateString(todo.drawAt)}</small></td>
+				<td><small>{dateString(todo.doneAt)}</small></td>
+			  </tr>
+			{/each}
+		 
+		</tbody>
+	  </table>
 </section>
 
+
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+	*{letter-spacing: -1px;}
 </style>
